@@ -11,14 +11,13 @@ public class LibraryReport {
         libraryReport.put(date, bookTitle);
     }
 
-    public String getByDate(LocalDate date) {
+    public void getByDate(LocalDate date) {
         String bookByDate = getLibraryReport().get(date);
         if (bookByDate == null) {
             System.out.println("There are no books for this date.");
         } else {
             System.out.println("The book for this day is '" + bookByDate + "'");
         }
-        return bookByDate;
     }
 
     public void showUsingDates() {
@@ -30,7 +29,7 @@ public class LibraryReport {
 
     public void showUsingTitles() {
         System.out.println("Written book titles in the Library report: ");
-        for (String titles: libraryReport.values()) {
+        for (String titles : libraryReport.values()) {
             System.out.println(titles);
         }
     }
@@ -39,7 +38,4 @@ public class LibraryReport {
         return libraryReport;
     }
 }
-
-
-
 
