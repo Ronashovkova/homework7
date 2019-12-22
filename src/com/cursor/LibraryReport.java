@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LibraryReport {
-    private Map<LocalDate, String> libraryReport = new HashMap<>();
+    private Map<LocalDate, String> dateToBookMap = new HashMap<>();
 
     public void put(LocalDate date, String bookTitle) {
-        libraryReport.put(date, bookTitle);
+        dateToBookMap.put(date, bookTitle);
     }
 
     public void getByDate(LocalDate date) {
-        String bookByDate = getLibraryReport().get(date);
+        String bookByDate = dateToBookMap.get(date);
         if (bookByDate == null) {
             System.out.println("There are no books for this date.");
         } else {
@@ -22,20 +22,12 @@ public class LibraryReport {
 
     public void showUsingDates() {
         System.out.println("Written dates in the Library report: ");
-        for (LocalDate date : libraryReport.keySet()) {
-            System.out.println(date);
+        System.out.println(dateToBookMap.keySet());
         }
-    }
 
     public void showUsingTitles() {
         System.out.println("Written book titles in the Library report: ");
-        for (String titles : libraryReport.values()) {
-            System.out.println(titles);
-        }
-    }
-
-    public Map<LocalDate, String> getLibraryReport() {
-        return libraryReport;
+        System.out.println(dateToBookMap.values());
     }
 }
 
